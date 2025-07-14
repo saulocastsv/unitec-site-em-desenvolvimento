@@ -47,8 +47,8 @@ try {
     $mail->Host       = $_ENV['SMTP_HOST']      ?? 'mail.unitecpr.com.br';
     $mail->SMTPAuth   = true;
     $mail->Username   = $_ENV['SMTP_USER']      ?? '_mainaccount@unitecpr.com.br';
-    $mail->Password   = $_ENV['SMTP_PASS']      ?? 'senha-forte';
-    $mail->Port       = $_ENV['SMTP_PORT']      ?? 587;
+    $mail->Password   = $_ENV['SMTP_PASS']      ?? '5Ah5$(25.y[d';
+    $mail->Port       = $_ENV['SMTP_PORT']      ?? 465;
     $mail->SMTPSecure = $_ENV['SMTP_SECURE']    ?? PHPMailer::ENCRYPTION_STARTTLS;
 
     // ------------------------------------------------
