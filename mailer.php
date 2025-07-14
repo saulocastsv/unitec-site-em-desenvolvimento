@@ -1,52 +1,79 @@
 <?php
-    // Only process POST reqeusts.
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Get the form fields and remove whitespace.
-        $name = strip_tags(trim($_POST["name"]));
-		$name = str_replace(array("\r","\n"),array(" "," "),$name);
-        $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL); 
-        $phone = trim($_POST["phone"]);
-        $message = trim($_POST["message"]);
+declare(strict_types=1);
 
-        // Check that data was sent to the mailer.
-        if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            // Set a 400 (bad request) response code and exit.
-            http_response_code(400);
-            echo "Oops! There was a problem with your submission. Please complete the form and try again.";
-            exit;
-        }
+require __DIR__ . '/vendor/autoload.php';
 
-        // Set the recipient email address.
-        // FIXME: Update this to your desired email address.
-        $recipient = "support@rstheme.com";
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-        // Set the email subject.
-        $subject = "New contact from $name";
+// ----------------------------------------------------
+// 1) Bloqueia requisições inválidas
+// ----------------------------------------------------
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    exit('Método não permitido.');
+}
 
-        // Build the email content.
-        $email_content = "Name: $name\n";
-        $email_content .= "Email: $email\n";
-        $email_content .= "Phone: $phone\n";
-        $email_content .= "Message:\n$message\n";
+// ----------------------------------------------------
+// 2) Honeypot anti-spam
+// ----------------------------------------------------
+if (!empty($_POST['website'])) {
+    http_response_code(400);
+    exit('Ação suspeita detectada.');
+}
 
-        // Build the email headers.
-        $email_headers = "From: $name <$email>";
+// ----------------------------------------------------
+// 3) Sanitização e validação
+// ----------------------------------------------------
+$name    = trim($_POST['name']     ?? '');
+$email   = trim($_POST['email']    ?? '');
+$phone   = trim($_POST['phone']    ?? '');
+$subject = trim($_POST['subject']  ?? 'Sem assunto');
+$message = trim($_POST['message']  ?? '');
 
-        // Send the email.
-        if (mail($recipient, $subject, $email_content, $email_headers)) {
-            // Set a 200 (okay) response code.
-            http_response_code(200);
-            echo "Thank You! Your message has been sent.";
-        } else {
-            // Set a 500 (internal server error) response code.
-            http_response_code(500);
-            echo "Oops! Something went wrong and we couldn't send your message.";
-        }
+if ($name === '' || $message === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    http_response_code(400);
+    exit('Preencha todos os campos obrigatórios.');
+}
 
-    } else {
-        // Not a POST request, set a 403 (forbidden) response code.
-        http_response_code(403);
-        echo "There was a problem with your submission, please try again.";
-    }
+// ----------------------------------------------------
+// 4) Configura PHPMailer SMTP
+// ----------------------------------------------------
+$mail          = new PHPMailer(true);
+$mail->CharSet = 'UTF-8';
 
-?>
+try {
+    $mail->isSMTP();
+    $mail->Host       = $_ENV['SMTP_HOST']      ?? 'mail.unitecpr.com.br';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = $_ENV['SMTP_USER']      ?? '_mainaccount@unitecpr.com.br';
+    $mail->Password   = $_ENV['SMTP_PASS']      ?? 'senha-forte';
+    $mail->Port       = $_ENV['SMTP_PORT']      ?? 587;
+    $mail->SMTPSecure = $_ENV['SMTP_SECURE']    ?? PHPMailer::ENCRYPTION_STARTTLS;
+
+    // ------------------------------------------------
+    // 5) Endereços e conteúdo
+    // ------------------------------------------------
+    $mail->setFrom($mail->Username, 'Form Contato');
+    $mail->addReplyTo($email, $name);
+    $mail->addAddress('contato@seudominio.com', 'Equipe');
+
+    $mail->Subject = "[Site] {$subject} – {$name}";
+    $mail->Body    =
+        "Nome: {$name}\n" .
+        "E-mail: {$email}\n" .
+        "Telefone: {$phone}\n\n" .
+        "Mensagem:\n{$message}";
+
+    // ------------------------------------------------
+    // 6) Envia e responde ao front
+    // ------------------------------------------------
+    $mail->send();
+    http_response_code(200);
+    exit('Obrigado! Sua mensagem foi enviada.');
+
+} catch (Exception $e) {
+    error_log('Mailer Error: ' . $e->getMessage());
+    http_response_code(500);
+    exit('Não foi possível enviar a mensagem. Tente novamente mais tarde.');
+}
