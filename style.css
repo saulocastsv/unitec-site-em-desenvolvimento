@@ -4979,7 +4979,7 @@ body .modal-backdrop {
   font-weight: 500;
   text-align: center;
   color: #ffffff;
-  background: #171F32;
+  background: #1c1c1c;
   transition: all 0.3s ease;
 }
 .rs-about .histort-part .single-history a .icon-part {
@@ -11622,7 +11622,7 @@ body .modal-backdrop {
   background-position: left;
 }
 .rs-cta.style2 .partition-bg-wrap.inner-page:before {
-  background: url(assets/images/cta/style2/left-bg2.png);
+  background: url(assets/images/cta/style2/left-bg2.webp);
   background-size: cover;
 }
 .rs-cta.style2 .partition-bg-wrap.inner-page:after {
@@ -12530,7 +12530,7 @@ body .modal-backdrop {
   padding: 20px 14px 35px !important;
 }
 .rs-faq-part.style1 .img-part {
-  background: url(assets/images/faq/1.jpg);
+  background: url(assets/images/faq/1.webp);
   background-size: cover;
   background-position: center;
   width: 100%;
