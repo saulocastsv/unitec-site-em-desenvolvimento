@@ -7516,7 +7516,7 @@ body .modal-backdrop {
 }
 .rs-features .features-wrap {
   border-radius: 5px 5px 5px 5px;
-  background: #171f32;
+  background: #212529;
   padding: 25px 40px 25px;
   display: flex;
   align-items: center;
@@ -11696,7 +11696,7 @@ body .modal-backdrop {
   z-index: -1;
 }
 .rs-cta.main-home .partition-bg-wrap:after {
-  background: url(assets/images/cta/home1.jpg);
+  background: url(assets/images/cta/home1.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
