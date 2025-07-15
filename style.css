@@ -4750,13 +4750,13 @@ body .modal-backdrop {
   margin-bottom: 65px;
 }
 .rs-slider.main-home .slider-content.slide1 {
-  background: url(assets/images/slider/main-home/1.jpg);
+  background: url(assets/images/slider/main-home/1.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .rs-slider.main-home .slider-content.slide2 {
-  background: url(assets/images/slider/main-home/2.jpg);
+  background: url(assets/images/slider/main-home/6.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
