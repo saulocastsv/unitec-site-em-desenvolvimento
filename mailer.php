@@ -1,10 +1,30 @@
 <?php
-declare(strict_types=1);
-
-require __DIR__ . '/vendor/autoload.php';
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+
+require 'path/to/PHPMailer/src/Exception.php';
+require 'path/to/PHPMailer/src/PHPMailer.php';
+require 'path/to/PHPMailer/src/SMTP.php';
+
+
+
+//Carrega o autoloader do Composer (criado pelo composer, não incluído com o PHPMailer)
+require 'vendor/autoload.php';
+
+//Cria uma instância; passar `true` ativa exceções
+$mail = new PHPMailer(true);
+
+try {
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Ativa saída de depuração detalhada
+    $mail->isSMTP();                                            //Envia usando SMTP
+    $mail->Host       = 'smtp.mail.unitecpr.com.br';                     //Define o servidor SMTP para envio
+    $mail->SMTPAuth   = true;                                   //Ativa autenticação SMTP
+    $mail->Username   = 'unitecescola@unitecpr.com.br';                     //Nome de usuário SMTP
+    $mail->Password   = 'lmIp@W5%YzwC';                               //Senha SMTP
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Ativa criptografia TLS implícita
+    $mail->Port       = 465;  
+
 
 // ----------------------------------------------------
 // 1) Bloqueia requisições inválidas
@@ -36,27 +56,14 @@ if ($name === '' || $message === '' || !filter_var($email, FILTER_VALIDATE_EMAIL
     exit('Preencha todos os campos obrigatórios.');
 }
 
-// ----------------------------------------------------
-// 4) Configura PHPMailer SMTP
-// ----------------------------------------------------
-$mail          = new PHPMailer(true);
-$mail->CharSet = 'UTF-8';
-
-try {
-    $mail->isSMTP();
-    $mail->Host       = $_ENV['SMTP_HOST']      ?? 'mail.unitecpr.com.br';
-    $mail->SMTPAuth   = true;
-    $mail->Username   = $_ENV['SMTP_USER']      ?? '_mainaccount@unitecpr.com.br';
-    $mail->Password   = $_ENV['SMTP_PASS']      ?? '5Ah5$(25.y[d';
-    $mail->Port       = $_ENV['SMTP_PORT']      ?? 465;
-    $mail->SMTPSecure = $_ENV['SMTP_SECURE']    ?? PHPMailer::ENCRYPTION_STARTTLS;
-
     // ------------------------------------------------
     // 5) Endereços e conteúdo
     // ------------------------------------------------
-    $mail->setFrom($mail->Username, 'Form Contato');
+    $mail->setFrom('unitecescola@unitecpr.com.br', 'Equipe Unitec');
+    $mail->addAddress('unitecescola@unitecpr.com.br', 'Equipe Unitec');
     $mail->addReplyTo($email, $name);
-    $mail->addAddress('contato@seudominio.com', 'Equipe');
+    $mail->addBCC('saulo.silva@unitecpr.com.br'); // Adicione BCC se necessário
+    
 
     $mail->Subject = "[Site] {$subject} – {$name}";
     $mail->Body    =
@@ -70,10 +77,14 @@ try {
     // ------------------------------------------------
     $mail->send();
     http_response_code(200);
+    echo 'Message has been sent';
     exit('Obrigado! Sua mensagem foi enviada.');
 
 } catch (Exception $e) {
     error_log('Mailer Error: ' . $e->getMessage());
     http_response_code(500);
     exit('Não foi possível enviar a mensagem. Tente novamente mais tarde.');
+} finally {
+    // Limpa os dados sensíveis da memória
+    unset($name, $email, $phone, $subject, $message);
 }

@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 document.addEventListener('DOMContentLoaded', () => {
-  const form       = document.getElementById('contactForm');
+  const form       = document.getElementById('contact-form');
   const statusSpan = document.getElementById('formStatus');
   const sendBtn    = document.getElementById('sendBtn');
 
