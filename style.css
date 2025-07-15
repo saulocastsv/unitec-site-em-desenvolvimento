@@ -15081,6 +15081,7 @@ body .modal-backdrop {
   }
 }
 .rotated-style {
+  animation: rotated-style 30s linear infinite; /* Standard property for compatibility */
   -webkit-animation: rotated-style 30s linear infinite;
 }
 @keyframes rotated-style {
