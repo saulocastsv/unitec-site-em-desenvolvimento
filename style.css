@@ -11560,7 +11560,7 @@ body .modal-backdrop {
   background-position: center;
 }
 .rs-cta.style2 .partition-bg-wrap:after {
-  background: url(assets/images/cta/style2/right-bg.jpg);
+  background: url(assets/images/cta/style2/left-bg.jpg);
   right: 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -11571,11 +11571,11 @@ body .modal-backdrop {
   background-size: cover;
 }
 .rs-cta.style2 .partition-bg-wrap.inner-page:after {
-  background: url(assets/images/cta/style2/right-bg2.png);
+  background: url(assets/images/cta/style2/left-bg2.png);
   background-size: cover;
 }
 .rs-cta.style3 {
-  background: url(assets/images/bg/pattern1.png);
+  background: url(assets/images/bg/left-bg2.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -11614,13 +11614,13 @@ body .modal-backdrop {
   z-index: -1;
 }
 .rs-cta.style7 .partition-bg-wrap:after {
-  background: url(assets/images/cta/home7/1.png);
+  background: url(assets/images/cta/home7/left-bg2.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 .rs-cta.style7 .partition-bg-wrap:before {
-  background: url(assets/images/cta/home7/2.png);
+  background: url(assets/images/cta/home7/left-bg2.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -11647,7 +11647,7 @@ body .modal-backdrop {
   background-position: center;
 }
 .rs-cta.main-home .partition-bg-wrap:before {
-  background: url(assets/images/cta/main-home.jpg);
+  background: url(assets/images/cta/main-home.webp);
   background-size: cover;
   background-repeat: no-repeat;
   right: 0;
