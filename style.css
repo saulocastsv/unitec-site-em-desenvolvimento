@@ -4736,8 +4736,8 @@ body .modal-backdrop {
 .rs-slider.main-home .slider-content .content-part .sl-sub-title {
   font-size: 22px;
   line-height: 30px;
-  font-weight: 500;
-  color: #ff5421;
+  font-weight: 700;
+  color:rgba(17, 17, 17, 0.8);
   margin-bottom: 22px;
   text-transform: uppercase;
 }
