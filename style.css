@@ -1,13 +1,12 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800');
-
-@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 html,
 body {
   font-size: 15px;
   color: #505050;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   vertical-align: baseline;
   line-height: 26px;
   font-weight: 400;
@@ -27,7 +26,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #111111;
   margin: 0 0 26px;
   line-height: 1.2;
@@ -73,7 +72,7 @@ h6 {
 .bold-text {
   font-size: 20px;
   font-weight: bold;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .extra-bold {
   font-weight: 800 !important;
@@ -444,7 +443,7 @@ blockquote p {
   display: inline-block;
   text-transform: uppercase;
   font-size: 16px;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   color: #111111;
   background: #f3f8f9;
@@ -597,7 +596,7 @@ blockquote p {
   display: inline-block;
   text-transform: capitalize;
   font-size: 16px;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   color: #ffffff;
 }
@@ -624,7 +623,7 @@ blockquote p {
   display: inline-block;
   text-transform: capitalize;
   font-size: 16px;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   color: #ffffff;
   background: #ff4007;
@@ -686,7 +685,7 @@ blockquote p {
   background: #ff5421;
   color: #ffffff;
   border-radius: 3px 3px 3px 3px;
-  font-family: "Rubik", Sans-serif;
+  font-family: "Montserrat", Sans-serif;
   font-size: 16px;
   font-weight: 500;
   text-transform: capitalize;
@@ -700,7 +699,7 @@ blockquote p {
   background: #ff5421;
   color: #ffffff;
   border-radius: 3px 3px 3px 3px;
-  font-family: "Rubik", Sans-serif;
+  font-family: "Montserrat", Sans-serif;
   font-size: 16px;
   font-weight: 500;
   text-transform: capitalize;
@@ -723,7 +722,7 @@ blockquote p {
   display: inline-block;
   text-transform: uppercase;
   font-size: 16px;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   color: #ffffff;
   background: #ff4007;
@@ -4445,7 +4444,7 @@ body .modal-backdrop {
   font-weight: 700;
   color: #ff5421;
   text-transform: uppercase;
-  font-family: "Nunito", Sans-serif;
+  font-family: "Roboto", Sans-serif;
   letter-spacing: 1px;
   display: block;
   margin-bottom: 10px;
@@ -4585,7 +4584,7 @@ body .modal-backdrop {
 .rs-slider.style1 .slider-content .sl-sub-title {
   font-size: 48px;
   line-height: 58px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin-bottom: 24px;
 }
 .rs-slider.style1 .slider-content .sl-title {
@@ -4661,7 +4660,7 @@ body .modal-backdrop {
 .rs-slider.style2 .slide-part .content .title {
   font-size: 55px;
   line-height: 70px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin-bottom: 40px;
   color: #031a3d;
 }
@@ -4947,7 +4946,7 @@ body .modal-backdrop {
   font-size: 22px;
   padding: 0;
   margin-bottom: 15px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   color: #111111;
 }
@@ -5031,7 +5030,7 @@ body .modal-backdrop {
 }
 .rs-about.style1 .notice-bord.style1 li .date span {
   font-size: 22px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
   display: block;
 }
 .rs-about.style1 .notice-bord.style1 li .desc {
@@ -8794,7 +8793,7 @@ body .modal-backdrop {
   padding: 98px 0 98px 320px;
 }
 .rs-testimonial.style1 .testi-item .content-part .desc {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 600;
   color: #111111;
   font-size: 36px;
@@ -8854,7 +8853,7 @@ body .modal-backdrop {
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #112958;
   display: inline;
   position: relative;
@@ -8892,7 +8891,7 @@ body .modal-backdrop {
   font-size: 22px;
   font-weight: 600;
   line-height: 30px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #111111;
   display: inline;
   position: relative;
@@ -9494,7 +9493,7 @@ body .modal-backdrop {
   font-size: 20px;
   color: #000000;
   font-weight: 700;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .rs-testimonial.home12-style .testi-item .item-content-basic .testi-content .designation {
   font-size: 16px;
@@ -9716,7 +9715,7 @@ body .modal-backdrop {
 }
 .rs-blog.style1 .events-short .date-part .date {
   font-size: 50px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #ff4007;
   font-weight: 700;
 }
@@ -10103,7 +10102,7 @@ body .modal-backdrop {
 }
 .rs-blog.main-home .blog-item .blog-content .btn-btm .rs-view-btn a {
   padding: 0px 0px 0px 0px;
-  font-family: "Rubik", Sans-serif;
+  font-family: "Montserrat", Sans-serif;
   font-weight: 400;
   color: #505050;
   font-size: 15px;
@@ -10332,7 +10331,7 @@ body .modal-backdrop {
 }
 .rs-blog.home9-style .short .date-part .date {
   font-size: 50px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #ff4007;
   font-weight: 700;
 }
@@ -11234,7 +11233,7 @@ body .modal-backdrop {
 }
 .rs-latest-events.style1 .event-wrap .events-short .date-part .date {
   font-size: 50px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #112958;
   font-weight: 700;
 }
@@ -11729,7 +11728,7 @@ body .modal-backdrop {
   border-radius: 5px 5px 5px 5px;
 }
 .rs-cta.home-style14 .content-part .sub-text {
-  font-family: "Nunito", Sans-serif;
+  font-family: "Roboto", Sans-serif;
   font-size: 15px;
   font-weight: 700;
   text-transform: uppercase;
@@ -11738,7 +11737,7 @@ body .modal-backdrop {
   margin-bottom: 10px;
 }
 .rs-cta.home-style14 .content-part .title {
-  font-family: "Nunito", Sans-serif;
+  font-family: "Roboto", Sans-serif;
   font-size: 22px;
   font-weight: 800;
   letter-spacing: 1px;
@@ -11849,14 +11848,14 @@ body .modal-backdrop {
   font-size: 42px;
   font-weight: 900;
   line-height: 51px;
-  font-family: "Nunito", Sans-serif;
+  font-family: "Roboto", Sans-serif;
 }
 .rs-counter.home12-style .counter-item .prefix {
   color: #0c8b51;
   font-size: 42px;
   font-weight: 900;
   line-height: 51px;
-  font-family: "Nunito", Sans-serif;
+  font-family: "Roboto", Sans-serif;
 }
 .rs-counter.home12-style .counter-item .title {
   color: #505050;
@@ -13166,7 +13165,7 @@ body .modal-backdrop {
   position: relative;
   padding-top: 50px;
   color: #0a0a0a;
-  font-family: Nunito;
+  font-family: Roboto;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
