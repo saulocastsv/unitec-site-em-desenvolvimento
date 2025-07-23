@@ -5316,6 +5316,7 @@ body .modal-backdrop {
   padding: 70px 70px 70px 160px;
   margin-left: -120px;
   margin-top: -70px;
+  
 }
 .rs-about.video-img {
   background: url(assets/images/video/bg.png);
@@ -5329,6 +5330,7 @@ body .modal-backdrop {
 .rs-about.video-img .shape-img {
   position: absolute;
   bottom: 0;
+  
 }
 .rs-about.video-img .shape-img.left {
   left: 100px;
